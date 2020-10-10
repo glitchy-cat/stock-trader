@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-def store(request):
+def home(request):
 
-    return render(request, 'store.html')
+    return render(request, 'home.html')
 
 # Create your views here.
