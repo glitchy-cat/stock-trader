@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Hello, world!</title>
+    <title>Stock-Trader</title>
   </head>
   <body>
 
@@ -32,9 +32,10 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form action="{% url 'home' %}" class="form-inline my-2 my-lg-0" method="POST">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="search" placeholder="Get stock quote" aria-label="Search" name="ticker" >
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Stock Quotes</button>
         </form>
       </div>
     </nav>
